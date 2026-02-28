@@ -426,6 +426,7 @@ def main():
             STATE_CONFIRM: [CallbackQueryHandler(cb_confirm, pattern="^(confirm_order|edit_info)$"), CallbackQueryHandler(cb_cart, pattern="^cart$")],
         },
         fallbacks=[CommandHandler("cancel", cmd_cancel), CommandHandler("start", cmd_start)],
+        per_message=False,
     )
 
     app.add_handler(conv)
